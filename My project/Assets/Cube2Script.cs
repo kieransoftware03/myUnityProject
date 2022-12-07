@@ -19,5 +19,15 @@ public class Cube2Script : MonoBehaviour
         {
             ourRigidBody.AddExplosionForce(1000, transform.position + Vector3.down + Vector3.back, 3);
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            ourRigidBody.AddExplosionForce(1000, transform.position + Vector3.down + Vector3.right, 3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            ourRigidBody.AddExplosionForce(1000, transform.position + Vector3.down + Vector3.left, 3);
+        }
     }
 }
