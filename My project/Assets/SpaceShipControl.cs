@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SpaceShipControl : MonoBehaviour
 {
+    Rigidbody ourRigidBody;
+
     public GameObject MissileCloneTemplate;
     
     Vector3 velocity, acceleration;
@@ -12,7 +14,7 @@ public class SpaceShipControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ourRigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -25,18 +27,18 @@ public class SpaceShipControl : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(new Vector3(0, 0, 1), rotationspeed*Time.deltaTime);
+            ourRigidBody.transform.Rotate(new Vector3(0, 0, 1), rotationspeed*Time.deltaTime);
 
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(new Vector3(0, 0, -1), rotationspeed * Time.deltaTime);
+            ourRigidBody.transform.Rotate(new Vector3(0, 0, -1), rotationspeed * Time.deltaTime);
 
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Rotate(new Vector3(1, 0, 0), rotationspeed * Time.deltaTime);
+            ourRigidBody.transform.Rotate(new Vector3(1, 0, 0), rotationspeed * Time.deltaTime);
 
         }
 
