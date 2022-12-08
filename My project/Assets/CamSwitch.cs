@@ -8,8 +8,6 @@ public class CamSwitch : MonoBehaviour
 
     public GameObject cam2;
 
-    public GameObject cam3;
-
     // Update is called once per frame
     void Update()
     {
@@ -17,19 +15,11 @@ public class CamSwitch : MonoBehaviour
         {
             cam1.SetActive(true);
             cam2.SetActive(false);
-            cam3.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             cam1.SetActive(false);
             cam2.SetActive(true);
-            cam3.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            cam1.SetActive(false);
-            cam2.SetActive(false);
-            cam3.SetActive(true);
         }
     }
 }
